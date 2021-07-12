@@ -1,11 +1,24 @@
+import data from './data/data';
 //  Тут устанавливаем всю функциональность
+
 const filter_reducer = (state, action) => {
+  if (action.type === 'LOAD-DATA') {
+    return {
+      ...state,
+      allFilms: [...data],
+      filteredFilms: [...data],
+    };
+  }
+
   if (action.type === 'SORT-NAME') {
-    console.log(action.payload);
+    // console.log(action.payload);
     return {
       ...state,
       sortName: action.payload,
     };
+  }
+  if (action.type === 'WRITER') {
+    return { ...state, sortWritter: action.payload };
   }
   if (action.type === 'SORT') {
     const { filteredFilms, sortName } = state;
@@ -42,6 +55,21 @@ const filter_reducer = (state, action) => {
     };
   }
 
+  if (action.type === 'WRITER-SORT') {
+    const { sortWritter, filteredFilms, allFilms } = state;
+    let newFilmArray = [...filteredFilms];
+    const all = [...allFilms];
+    console.log(1, sortWritter);
+    if (sortWritter !== 'all') {
+      newFilmArray = all
+        .filter((item) => item.Written_by)
+        .filter((item) => item.Written_by.includes(sortWritter));
+      console.log(2, sortWritter);
+    } else {
+      return { ...state, filteredFilms: allFilms };
+    }
+    return { ...state, filteredFilms: newFilmArray };
+  }
   throw new Error(`No Matching {action.type} - Action type`);
 };
 export default filter_reducer;

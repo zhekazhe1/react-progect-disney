@@ -1,14 +1,22 @@
 import React from 'react';
 import { useFilterContext } from './filter_context';
 const Sort = () => {
-  const { updateSort, sortName } = useFilterContext();
+  const {
+    updateSort,
+    sortName,
+    sortWritter,
+    getUniqueValues,
+    filteredFilms,
+    getFilmBy,
+  } = useFilterContext();
+  const written_by = getUniqueValues(filteredFilms, 'Written_by');
+  // console.log(written_by);
   return (
     <div className='sort'>
-      Sort items
-      {/* Budget */}
+      Sort items by Budget:{/* Budget */}
       <div className='range-budget'>
         <form onClick={updateSort}>
-          <p>Sort by Budget:</p>
+          {/* <p>Sort by Budget:</p> */}
             <input type='radio' id='min' name='min-max' value='min' />
           <label htmlFor='min'>min to Max</label>
           <br />
@@ -20,7 +28,7 @@ const Sort = () => {
       {/* end of Budget */}
       {/* Sort by name */}
       <form>
-        <label htmlFor='sort'>{`sort by  `} </label>
+        <label htmlFor='sort'>{`sort by:  `} </label>
         <select
           name='sort'
           id='sort'
@@ -33,6 +41,27 @@ const Sort = () => {
         </select>
       </form>
       {/* End Sort by name */}
+      {/* Sort by writtens */}
+      <form>
+        <label htmlFor='sortWritten'>{`sort Written by:  `} </label>
+        <select
+          name='sortWritten'
+          id='sortWritten'
+          className='sort-input'
+          // value={sortWritter}
+          onChange={getFilmBy}
+        >
+          {written_by.map((item, index) => {
+            return (
+              <option key={index} value={item}>
+                {item}
+              </option>
+            );
+          })}
+          .join('')
+        </select>
+      </form>
+      {/* End of Sort by writtens */}
     </div>
   );
 };

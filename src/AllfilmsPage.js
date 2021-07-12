@@ -9,7 +9,7 @@ const AllfilmsPage = () => {
 
   return (
     <div>
-      <Sort data={filteredFilms} />
+      <Sort />
       <section className='mainePicture'>
         {filteredFilms.map((item) => {
           return (
