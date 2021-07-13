@@ -59,12 +59,10 @@ const filter_reducer = (state, action) => {
     const { sortWritter, filteredFilms, allFilms } = state;
     let newFilmArray = [...filteredFilms];
     const all = [...allFilms];
-    console.log(1, sortWritter);
     if (sortWritter !== 'all') {
       newFilmArray = all
         .filter((item) => item.Written_by)
         .filter((item) => item.Written_by.includes(sortWritter));
-      console.log(2, sortWritter);
     } else {
       return { ...state, filteredFilms: allFilms };
     }

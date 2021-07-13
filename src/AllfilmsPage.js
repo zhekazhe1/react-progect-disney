@@ -4,7 +4,7 @@ import Sort from './Sort';
 import { useFilterContext } from './filter_context';
 
 const AllfilmsPage = () => {
-  const { allFilms, filteredFilms } = useFilterContext();
+  const { filteredFilms } = useFilterContext();
   // console.log(filteredFilms);
 
   return (
@@ -24,7 +24,7 @@ const AllfilmsPage = () => {
               </a>
               <p className='imageName'>{item.name}</p>
               <Link to={`/film/${item.id}`} className='btn'>
-                see more
+                More information
               </Link>
             </div>
           );

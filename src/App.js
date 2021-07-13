@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <AllfilmsPage data={data} />;
+          <AllfilmsPage />;
         </Route>
         <Route exact path='/film/:id' children={<FilmPage />} />
         <Route path='*'>

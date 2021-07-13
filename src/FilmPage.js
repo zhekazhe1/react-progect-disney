@@ -69,12 +69,12 @@ const FilmPage = () => {
             </tr>
             <tr>
               <td className='headInfo'>Budget: </td>
-              <td className='info'>{film.Budget && ` ${film.Budget}`}</td>
+              <td className='info'>{film.Budget && `$ ${film.Budget}`}</td>
             </tr>
             <tr>
               <td className='headInfo'>Gross revenue: </td>
               <td className='info'>
-                {film.Gross_revenue && ` ${film.Gross_revenue}`}
+                {film.Gross_revenue && `$ ${film.Gross_revenue}`}
               </td>
             </tr>
             <tr>

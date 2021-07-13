@@ -1,5 +1,6 @@
 body {
-  background: rgb(231, 215, 215);
+  background-color: #96baff;
+
   text-align: center;
 }
 h5,
@@ -13,6 +14,9 @@ h1 {
 h2 {
   margin-bottom: 20px;
 }
+img {
+  padding-top: 20px;
+}
 table {
   text-align: left;
 }
@@ -20,9 +24,7 @@ td {
   margin: 10px;
   text-align: justify;
 }
-/* img {
-  align-items: center;
-} */
+
 .allPictures {
   display: inline-block;
   margin: 20px;
@@ -30,10 +32,12 @@ td {
   height: 400px;
   border: 1px solid black;
 }
+.btn {
+  text-decoration-line: unset;
+  color: blue;
+  font-weight: bold;
+}
 .oneItemInfo {
-  /* display: inline-block;
-  padding: 40px;
-  margin-top: 40px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,14 +47,33 @@ td {
 }
 .info {
   padding-left: 20px;
+  font-weight: bold;
 }
 .headInfo {
   color: blue;
   font-weight: bold;
 }
+.head {
+  font-size: 1rem;
+}
 .link {
   display: block;
 }
+/* .mainePicture {
+} */
 .sort {
-  margin-top: 30px;
+  background-color: #7c83fd;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  /* border: 1px solid; */
+  padding-bottom: 10px;
+  top: 0;
+  position: sticky;
+}
+.sortItem {
+  display: inline-block;
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 50px;
 }
