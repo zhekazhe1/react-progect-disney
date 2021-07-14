@@ -5,26 +5,26 @@ import { useFilterContext } from './filter_context';
 
 const AllfilmsPage = () => {
   const { filteredFilms } = useFilterContext();
-  // console.log(filteredFilms);
+  // console.log(filteredFilms)
 
   return (
     <div>
       <Sort />
-      <section className='mainePicture'>
+      <section className='conteiner'>
         {filteredFilms.map((item) => {
           return (
-            <div key={item.id} className='allPictures'>
+            <div key={item.id} className='oneFilm'>
               <a href={`/film/${item.id}`}>
                 <img
                   src={item.film_picture}
                   alt={item.name}
-                  width='200'
-                  height='300'
+                  width='150'
+                  height='250'
                 />
               </a>
-              <p className='imageName'>{item.name}</p>
+              <h3 className='imageName'>{item.name}</h3>
               <Link to={`/film/${item.id}`} className='btn'>
-                More information
+                See More
               </Link>
             </div>
           );

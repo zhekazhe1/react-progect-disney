@@ -1,77 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 body {
   background-color: #96baff;
-
-  text-align: center;
-}
-h5,
-h4,
-h3,
-h2,
-h1 {
-  margin: 0;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-img {
-  padding-top: 20px;
 }
 table {
-  text-align: left;
+  border-spacing: 3px;
 }
-td {
-  margin: 10px;
-  text-align: justify;
+.underline {
+  text-decoration: underline;
+  color: rgb(116, 45, 4);
+}
+.item-wrapper {
+  display: grid;
+  grid-template-rows: 0.2fr 1fr 0.6fr 0.1fr;
+  font-size: 0.8rem;
+}
+.film-name {
+  text-align: center;
+  padding-top: 15px;
+}
+.image > img {
+  width: 50%;
+  height: auto;
+}
+.image {
+  text-align: center;
+}
+.info-wrapper {
+  margin-top: 10px;
+  padding: 10px;
+}
+.link {
+  text-align: center;
+}
+.sort-container {
+  background-color: #7c83fd;
+  padding: 10px;
+}
+.sortItem {
+  padding-top: 10px;
+}
+.conteiner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.oneFilm {
+  width: 200px;
+  height: 330px;
+  text-align: center;
+  margin: 20px;
+  padding: 5px;
+  border: blanchedalmond 1px solid;
 }
 
-.allPictures {
-  display: inline-block;
-  margin: 20px;
-  width: 300px;
-  height: 400px;
-  border: 1px solid black;
-}
 .btn {
   text-decoration-line: unset;
   color: blue;
-  font-weight: bold;
+  margin-top: 5px;
 }
-.oneItemInfo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (min-width: 768px) {
+  .conteiner {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: unset;
+    flex-wrap: wrap;
+  }
+  .oneFilm {
+    display: block;
+    float: left;
+    width: 200px;
+    height: 330px;
+    text-align: center;
+  }
+  .sort-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .sortItem {
+    padding-top: 10px;
+  }
+  .item-wrapper {
+    grid-template-rows: 0.15fr 1fr 0.4fr 0.1fr;
+    font-size: 1rem;
+  }
 }
-.oneItem {
-  padding: 30px 10px;
-}
-.info {
-  padding-left: 20px;
-  font-weight: bold;
-}
-.headInfo {
-  color: blue;
-  font-weight: bold;
-}
-.head {
-  font-size: 1rem;
-}
-.link {
-  display: block;
-}
-
-.sort {
-  background-color: #7c83fd;
-  display: flex;
-  justify-content: space-evenly;
-  height: 100px;
-  padding-bottom: 10px;
-  top: 0;
-  position: sticky;
-}
-.sortItem {
-  display: inline-block;
-  margin-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 50px;
+@media (min-width: 1100px) {
+  .image > img {
+    width: 300px;
+    height: auto;
+  }
+  .text:hover {
+    font-size: large;
+    font-weight: bold;
+  }
 }

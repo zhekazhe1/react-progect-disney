@@ -10,9 +10,9 @@ const Sort = () => {
     getFilmBy,
   } = useFilterContext();
   const written_by = getUniqueValues(filteredFilms, 'Written_by');
-  // console.log(written_by);
+  // console.log(written_by)
   return (
-    <div className='sort'>
+    <div className='sort-container'>
       <div className='sortItem'>
         <h5 className='head'>Sort items by Budget:</h5>
         {/* Budget */}
@@ -35,7 +35,7 @@ const Sort = () => {
 
         <form>
           <label htmlFor='sort' className='head'>
-            <b> {`sort by:  `}</b>
+            <b> {`sort by Name:  `}</b>
           </label>
           <select
             name='sort'
